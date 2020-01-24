@@ -50,7 +50,7 @@ Citizen.CreateThread(function()
                         OpenShopInv("weaponshop")
                         Citizen.Wait(2000)
                     else
-                        exports['mythic_notify']:DoHudText('error', 'You need a Fire Arms license before you can buy weapons')
+                        exports['mythic_notify']:SendAlert('error', 'You need a Fire Arms license before you can buy weapons')
                     end
                 end
             end
@@ -207,13 +207,13 @@ Citizen.CreateThread(function()
         coords = GetEntityCoords(player)
 
         if GetDistanceBetweenCoords(coords, Config.WeaponLiscence.x, Config.WeaponLiscence.y, Config.WeaponLiscence.z, true) < 3.0 then
-            ESX.Game.Utils.DrawText3D(vector3(Config.WeaponLiscence.x, Config.WeaponLiscence.y, Config.WeaponLiscence.z), "Press [E] to open shop", 0.6)
+            ESX.Game.Utils.DrawText3D(vector3(Config.WeaponLiscence.x, Config.WeaponLiscence.y, Config.WeaponLiscence.z), "Press ~r~[E]~s~ to open shop", 0.6)
 
             if IsControlJustReleased(0, Keys["E"]) then
                 if Licenses['weapon'] == nil then
                     OpenBuyLicenseMenu()
                 else
-                    exports['mythic_notify']:DoHudText('error', 'You already have a Fire arms license!')
+                    exports['mythic_notify']:SendAlert('error', 'You already have a Fire arms license!')
                 end
                 Citizen.Wait(2000)
             end
@@ -282,31 +282,31 @@ Citizen.CreateThread(function()
 
         for k, v in pairs(Config.Shops.RegularShop.Locations) do
             if GetDistanceBetweenCoords(coords, Config.Shops.RegularShop.Locations[k].x, Config.Shops.RegularShop.Locations[k].y, Config.Shops.RegularShop.Locations[k].z, true) < 3.0 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.RegularShop.Locations[k].x, Config.Shops.RegularShop.Locations[k].y, Config.Shops.RegularShop.Locations[k].z + 1.0), "Press [E] to open shop", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.RegularShop.Locations[k].x, Config.Shops.RegularShop.Locations[k].y, Config.Shops.RegularShop.Locations[k].z + 1.0), "Press ~r~[E]~s~ to open shop", 0.6)
             end
         end
 
         for k, v in pairs(Config.Shops.RobsLiquor.Locations) do
             if GetDistanceBetweenCoords(coords, Config.Shops.RobsLiquor.Locations[k].x, Config.Shops.RobsLiquor.Locations[k].y, Config.Shops.RobsLiquor.Locations[k].z, true) < 3.0 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.RobsLiquor.Locations[k].x, Config.Shops.RobsLiquor.Locations[k].y, Config.Shops.RobsLiquor.Locations[k].z + 1.0), "Press [E] to open shop", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.RobsLiquor.Locations[k].x, Config.Shops.RobsLiquor.Locations[k].y, Config.Shops.RobsLiquor.Locations[k].z + 1.0), "Press ~r~[E]~s~ to open shop", 0.6)
             end
         end
 
         for k, v in pairs(Config.Shops.YouTool.Locations) do
             if GetDistanceBetweenCoords(coords, Config.Shops.YouTool.Locations[k].x, Config.Shops.YouTool.Locations[k].y, Config.Shops.YouTool.Locations[k].z, true) < 3.0 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.YouTool.Locations[k].x, Config.Shops.YouTool.Locations[k].y, Config.Shops.YouTool.Locations[k].z + 1.0), "Press [E] to open shop", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.YouTool.Locations[k].x, Config.Shops.YouTool.Locations[k].y, Config.Shops.YouTool.Locations[k].z + 1.0), "Press ~r~[E]~s~ to open shop", 0.6)
             end
         end
 
         for k, v in pairs(Config.Shops.PrisonShop.Locations) do
             if GetDistanceBetweenCoords(coords, Config.Shops.PrisonShop.Locations[k].x, Config.Shops.PrisonShop.Locations[k].y, Config.Shops.PrisonShop.Locations[k].z, true) < 3.0 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.PrisonShop.Locations[k].x, Config.Shops.PrisonShop.Locations[k].y, Config.Shops.PrisonShop.Locations[k].z), "Press [E] to open shop", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.PrisonShop.Locations[k].x, Config.Shops.PrisonShop.Locations[k].y, Config.Shops.PrisonShop.Locations[k].z), "Press ~r~[E]~s~ to open shop", 0.6)
             end
         end
 
         for k, v in pairs(Config.Shops.WeaponShop.Locations) do
             if GetDistanceBetweenCoords(coords, Config.Shops.WeaponShop.Locations[k].x, Config.Shops.WeaponShop.Locations[k].y, Config.Shops.WeaponShop.Locations[k].z, true) < 3.0 then
-                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.WeaponShop.Locations[k].x, Config.Shops.WeaponShop.Locations[k].y, Config.Shops.WeaponShop.Locations[k].z + 1.0), "Press [E] to open shop", 0.6)
+                ESX.Game.Utils.DrawText3D(vector3(Config.Shops.WeaponShop.Locations[k].x, Config.Shops.WeaponShop.Locations[k].y, Config.Shops.WeaponShop.Locations[k].z + 1.0), "Press ~r~[E]~s~ to open shop", 0.6)
             end
         end
     end

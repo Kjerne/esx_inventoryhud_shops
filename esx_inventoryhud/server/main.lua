@@ -308,8 +308,9 @@ AddEventHandler("suku:SellItemToPlayer",function(source, type, item, count)
     local xPlayer = ESX.GetPlayerFromId(_source)
 
     if type == "item_standard" then
-        local targetItem = xPlayer.getInventoryItem(item)
-        if targetItem.limit == -1 or ((targetItem.count + count) <= targetItem.limit) then
+		local targetItem = xPlayer.getInventoryItem(item)
+		if targetItem.limit == -1 or xPlayer.canCarryItem then
+        --if targetItem.limit == -1 or ((targetItem.count + count) <= targetItem.limit) then
             local list = itemShopList
             for i = 1, #list, 1 do
 				if list[i].name == item then
