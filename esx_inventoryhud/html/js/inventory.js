@@ -193,7 +193,7 @@ function setCost(item) {
     cost = item.price
 
     if (item.price == 0){
-        cost = "$" + item.price
+        cost = "Free"
     }
     if (item.price > 0) {
         cost = "$" + item.price
